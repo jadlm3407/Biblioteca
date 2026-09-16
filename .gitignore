@@ -23,7 +23,6 @@
 *.dll
 *.so.*
 
-
 # Fortran module files
 *.mod
 *.smod
@@ -51,6 +50,7 @@ cmake_install.cmake
 Makefile
 install_manifest.txt
 compile_commands.json
+CMakeUserPresets.json
 
 # Temporary files
 *.tmp
@@ -67,3 +67,28 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# ---------------------------------------------------
+# IDEs & Editors
+# ---------------------------------------------------
+# CLion
+.idea/
+cmake-build-*/
+
+# VS Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.user
+
+# ---------------------------------------------------
+# OS generated files
+# ---------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
