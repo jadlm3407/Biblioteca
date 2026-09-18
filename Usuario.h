@@ -24,6 +24,13 @@ public:
     void printReservas();
     void printHistorial();
     bool verificarLibro(Libro libro);
+    std::string getNombre();
+    std::string getApellido();
+    std::string getDNI();
+    int getCantidadReservados();
+    int getCantidadHistorial();
+    Libro atReservado(int posicion);
+    Libro atHistorial(int posicion);
 };
 
 

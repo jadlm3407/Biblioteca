@@ -46,3 +46,31 @@ bool Usuario::verificarLibro(Libro libro) {
     } while (verificar == false && i<cantidadReservados);
     return verificar;
 }
+
+std::string Usuario::getNombre() {
+    return nombre;
+}
+
+std::string Usuario::getApellido() {
+    return apellido;
+}
+
+std::string Usuario::getDNI() {
+    return dni;
+}
+
+int Usuario::getCantidadReservados() {
+    return cantidadReservados;
+}
+
+int Usuario::getCantidadHistorial() {
+    return cantidadHistorial;
+}
+
+Libro Usuario::atReservado(int posicion) {
+    return Usuario::librosReservados[posicion];
+}
+
+Libro Usuario::atHistorial(int posicion) {
+    return Usuario::librosHistorial[posicion];
+}
