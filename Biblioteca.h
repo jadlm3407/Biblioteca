@@ -6,20 +6,34 @@
 #define BIBLIOTECA_BIBLIOTECA_H
 #include "Usuario.h"
 
+#include <vector>
 
 class Biblioteca {
 
-
+private:
+    std::vector<Usuario>* listaUsuarios;
+    std:: vector<Libro>* catalogoLibros = new std::vector<Libro>();
 
 
 public:
-//    Comprobar qué libros hay disponibles
-//   Ver el historial de libros de una persona
-//    Ver si una persona tiene un libro o no
-//    Sacar un libro (asignárselo a una persona)
-//    Devolver un libro (desasignárselo a dicha persona)
+
     Biblioteca();
 
+    void cargarUsuarios();
+    void cargarLibros();
+
+
+
+
+
+
+
+
+    //    Comprobar qué libros hay disponibles
+    //   Ver el historial de libros de una persona
+    //    Ver si una persona tiene un libro o no
+    //    Sacar un libro (asignárselo a una persona)
+    //    Devolver un libro (desasignárselo a dicha persona)
     void librosDisponibles();
     bool tieneLibro(Usuario usuario);
     void asignarLibro(Usuario usuario);
