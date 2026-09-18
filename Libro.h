@@ -14,25 +14,25 @@ private:
     string autor;
     string categoria;
     string ISBN;
-    bool disponible;
+    bool isDisponible;
     string dniUsuarioActual;  // DNI de quien lo tiene prestado; vacio si esta disponible
 
 public:
     //Constructores
     Libro();
-    Libro(const string titulo, const string autor, const string categoria, const string ISBN);
+    Libro( string titulo,  string autor,  string categoria,  string ISBN);
 
 
     // Getters
-    string getTitulo() const;
-    string getAutor() const ;
-    string getCategoria() const ;
-    string getISBN() const ;
-    bool isDisponible() const;
-    string getDniUsuarioActual() const;
+    string getTitulo();
+    string getAutor();
+    string getCategoria();
+    string getISBN();
+    bool getIsDisponible();
+    string getDniUsuarioActual();
 
     // Setters
-    void setDisponible(bool disponible);
+    void setDisponible(bool isDisponible);
     void setDniUsuarioActual(const string dni);
 
 

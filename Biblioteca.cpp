@@ -9,7 +9,7 @@
 
 Biblioteca::Biblioteca() {
     cargarUsuarios();
- //   cargarLibros();
+    cargarLibros();
 }
 
 void Biblioteca::cargarLibros() {
@@ -130,3 +130,10 @@ void Biblioteca:: cargarUsuarios() {
     listaUsuarios->push_back(u15);
     listaUsuarios->push_back(u16);
 }
+
+
+//void cargarDisponibles() {
+  //  for (const Libro&libro : catalogoLibros) {
+    //    std::cout << libro.getTitulo() << std::endl;
+  //  }
+//}

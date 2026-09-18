@@ -12,47 +12,47 @@ Libro::Libro() {
     autor = "";
     categoria = "";
     ISBN = "";
-    disponible = true;
+    isDisponible = true;
     dniUsuarioActual = "";
 }
 
-Libro::Libro(const string titulo, const string autor, const string categoria, const string ISBN) {
+Libro::Libro(string titulo,string autor,string categoria,string ISBN) {
     this->titulo = titulo;
     this->autor = autor;
     this->categoria = categoria;
     this->ISBN = ISBN;
-    this->disponible = true;       // un libro nuevo entra siempre como disponible
+    this->isDisponible = true;       // un libro nuevo entra siempre como disponible
     this->dniUsuarioActual = "";
 }
 
-string Libro::getTitulo() const {
+string Libro::getTitulo(){
     return titulo;
 }
 
-string Libro::getAutor() const {
+string Libro::getAutor(){
     return autor;
 }
 
-string Libro::getCategoria() const {
+string Libro::getCategoria(){
     return categoria;
 }
 
-string Libro::getISBN() const {
+string Libro::getISBN(){
     return ISBN;
 }
 
-bool Libro::isDisponible() const {
-    return disponible;
+bool Libro::getIsDisponible(){
+    return isDisponible;
 }
 
-string Libro::getDniUsuarioActual() const {
+string Libro::getDniUsuarioActual(){
     return dniUsuarioActual;
 }
 
 void Libro::setDisponible(bool disponible) {
-    this->disponible = disponible;
+    this->isDisponible = disponible;
 }
 
-void Libro::setDniUsuarioActual(const string dni) {
+void Libro::setDniUsuarioActual(string dni) {
     this->dniUsuarioActual = dni;
 }

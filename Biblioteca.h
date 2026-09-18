@@ -34,7 +34,7 @@ public:
     //    Ver si una persona tiene un libro o no
     //    Sacar un libro (asignárselo a una persona)
     //    Devolver un libro (desasignárselo a dicha persona)
-    void librosDisponibles();
+    void cargarDisponibles();
     bool tieneLibro(Usuario usuario);
     void asignarLibro(Usuario usuario);
     void designarLibro(Usuario usuario);
