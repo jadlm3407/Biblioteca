@@ -8,6 +8,8 @@
 #include <ostream>
 
 Biblioteca::Biblioteca() {
+    catalogoLibros = new std::vector<Libro>();
+    listaUsuarios = new std::vector<Usuario>();
     cargarUsuarios();
     cargarLibros();
 }
@@ -53,6 +55,7 @@ Libro l37 = Libro("Cien años de soledad", "Gabriel Garcia Marquez", "Clasico", 
 Libro l38 = Libro("Don Quijote de la Mancha", "Miguel de Cervantes", "Clasico", "9788420412146");
 Libro l39 = Libro("El mundo de Sofia", "Jostein Gaarder", "Filosofia", "9788432217018");
 Libro l40 = Libro("Así habló Zaratustra", "Friedrich Nietzsche", "Filosofia", "9788420674408");
+
 
     catalogoLibros->push_back(l1);
     catalogoLibros->push_back(l2);
@@ -133,7 +136,27 @@ void Biblioteca:: cargarUsuarios() {
 
 
 void Biblioteca::cargarDisponibles() {
+    std::cout << "Lista de libros disponibles" << std::endl;
     for (Libro libro : *catalogoLibros) {
-        std::cout << libro.getTitulo() << std::endl;
+        if (libro.getEstado() == true) {
+            cout<<libro.getTitulo()<<endl;
+        }
+    }
+}
+
+
+void asignarLibro(Libro libro,Usuario usuario) {
+    if (libro.getEstado() == true) {
+        libro.setDniUsuarioActual(usuario.getDNI());
+        libro.setEstado(false);
+    } else {
+        std::cout<< "El libro " <<libro.getTitulo() << " no está disponible"<< std::endl;
+    }
+}
+
+
+void designarLibro(Libro libro,Usuario usuario) {
+    if (libro.getEstado() == true) {
+
     }
 }

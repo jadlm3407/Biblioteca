@@ -12,7 +12,7 @@ class Biblioteca {
 
 private:
     std::vector<Usuario>* listaUsuarios;
-    std:: vector<Libro>* catalogoLibros = new std::vector<Libro>();
+    std:: vector<Libro>* catalogoLibros;
 
 
 public:
@@ -22,22 +22,22 @@ public:
     void cargarUsuarios();
     void cargarLibros();
 
+    void cargarDisponibles();
+
+
+
+    void asignarLibro(Libro libro,Usuario usuario);
+    void designarLibro(Libro libro,Usuario usuario);
 
 
 
 
-
-
-
-    //    Comprobar qué libros hay disponibles
     //   Ver el historial de libros de una persona
     //    Ver si una persona tiene un libro o no
     //    Sacar un libro (asignárselo a una persona)
     //    Devolver un libro (desasignárselo a dicha persona)
-    void cargarDisponibles();
     bool tieneLibro(Usuario usuario);
-    void asignarLibro(Usuario usuario);
-    void designarLibro(Usuario usuario);
+    void historialUsuario();
 
 };
 

@@ -14,14 +14,6 @@ Usuario::Usuario(std::string nombre, std::string apellido, std::string dni) {
     cantidadHistorial=0;
 }
 
-void Usuario::reservarLibro(Libro libro) {
-    Usuario::librosReservados[cantidadReservados++] = libro;
-    Usuario::librosHistorial[cantidadHistorial++] = libro;
-}
-
-void Usuario::devolverLibro() {
-    cantidadReservados--;
-}
 
 void Usuario::printReservas() {
     for (int i = 0; i < cantidadReservados; i++) {
@@ -35,17 +27,6 @@ void Usuario::printHistorial() {
     }
 }
 
-bool Usuario::verificarLibro(Libro libro) {
-    int i=0;
-    bool verificar = false;
-    do {
-        if (libro.getTitulo() == Usuario::librosReservados[i].getTitulo()) {
-            verificar = true;
-        }
-        i++;
-    } while (verificar == false && i<cantidadReservados);
-    return verificar;
-}
 
 std::string Usuario::getNombre() {
     return nombre;

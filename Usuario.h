@@ -19,11 +19,8 @@ private:
     int cantidadHistorial;
 public:
     Usuario(std::string nombre, std::string apellido, std::string dni);
-    void reservarLibro(Libro libro);
-    void devolverLibro();
     void printReservas();
     void printHistorial();
-    bool verificarLibro(Libro libro);
     std::string getNombre();
     std::string getApellido();
     std::string getDNI();

@@ -12,7 +12,7 @@ Libro::Libro() {
     autor = "";
     categoria = "";
     ISBN = "";
-    isDisponible = true;
+    estado = true;
     dniUsuarioActual = "";
 }
 
@@ -21,7 +21,7 @@ Libro::Libro(string titulo,string autor,string categoria,string ISBN) {
     this->autor = autor;
     this->categoria = categoria;
     this->ISBN = ISBN;
-    this->isDisponible = true;       // un libro nuevo entra siempre como disponible
+    this->estado = true;       // un libro nuevo entra siempre como disponible
     this->dniUsuarioActual = "";
 }
 
@@ -41,16 +41,16 @@ string Libro::getISBN(){
     return ISBN;
 }
 
-bool Libro::getIsDisponible(){
-    return isDisponible;
+bool Libro::getEstado(){
+    return estado;
 }
 
 string Libro::getDniUsuarioActual(){
     return dniUsuarioActual;
 }
 
-void Libro::setDisponible(bool disponible) {
-    this->isDisponible = disponible;
+void Libro::setEstado(bool nuevoEstado) {
+    this->estado = nuevoEstado;
 }
 
 void Libro::setDniUsuarioActual(string dni) {

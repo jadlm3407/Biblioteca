@@ -14,7 +14,7 @@ private:
     string autor;
     string categoria;
     string ISBN;
-    bool isDisponible;
+    bool estado;
     string dniUsuarioActual;  // DNI de quien lo tiene prestado; vacio si esta disponible
 
 public:
@@ -24,15 +24,16 @@ public:
 
 
     // Getters
+
     string getTitulo();
     string getAutor();
     string getCategoria();
     string getISBN();
-    bool getIsDisponible();
+    bool getEstado();
     string getDniUsuarioActual();
 
     // Setters
-    void setDisponible(bool isDisponible);
+    void setEstado(bool Estado);
     void setDniUsuarioActual(const string dni);
 
 
