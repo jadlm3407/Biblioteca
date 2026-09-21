@@ -18,6 +18,7 @@ private:
     Libro librosHistorial[50];
     int cantidadHistorial;
 public:
+    Usuario();
     Usuario(std::string nombre, std::string apellido, std::string dni);
     void printReservas();
     void printHistorial();

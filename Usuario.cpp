@@ -6,6 +6,10 @@
 #include "Libro.h"
 #include <iostream>
 
+Usuario::Usuario() {
+
+}
+
 Usuario::Usuario(std::string nombre, std::string apellido, std::string dni) {
     this->nombre = nombre;
     this->apellido = apellido;
