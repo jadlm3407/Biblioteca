@@ -132,8 +132,8 @@ void Biblioteca:: cargarUsuarios() {
 }
 
 
-//void cargarDisponibles() {
-  //  for (const Libro&libro : catalogoLibros) {
-    //    std::cout << libro.getTitulo() << std::endl;
-  //  }
-//}
+void Biblioteca::cargarDisponibles() {
+    for (Libro libro : *catalogoLibros) {
+        std::cout << libro.getTitulo() << std::endl;
+    }
+}

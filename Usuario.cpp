@@ -25,13 +25,13 @@ void Usuario::devolverLibro() {
 
 void Usuario::printReservas() {
     for (int i = 0; i < cantidadReservados; i++) {
-        std::cout << i << ": " << Usuario::librosReservados[i].getTitulo << std::endl; //Supongo que pondran getTitulo en Libro
+        std::cout << i << ": " << Usuario::librosReservados[i].getTitulo() << std::endl; //Supongo que pondran getTitulo en Libro
     }
 }
 
 void Usuario::printHistorial() {
     for (int i = 0; i < cantidadHistorial; i++) {
-        std::cout<< i << ": " << Usuario::librosHistorial[i].getTitulo << std::endl; //Supongo que pondran getTitulo en Libro
+        std::cout<< i << ": " << Usuario::librosHistorial[i].getTitulo() << std::endl; //Supongo que pondran getTitulo en Libro
     }
 }
 
