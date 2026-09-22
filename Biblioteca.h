@@ -25,22 +25,20 @@ public:
     void cargarLibros();
 
     void cargarDisponibles();
-
+    void cargarRegistroUsuarios();
 
 
     void asignarLibro(Libro* libro,Usuario* usuario);
     void designarLibro(Libro* libro,Usuario* usuario);
 
 
-
+    void usuarioTieneLibro(std::string dni, std::string isbn);
 
     //   Ver el historial de libros de una persona
     //    Ver si una persona tiene un libro o no
     //    Sacar un libro (asignárselo a una persona)
     //    Devolver un libro (desasignárselo a dicha persona)
-    bool getUsuarioAsignado(Libro* libro);
-    void historialUsuario();
-
+    void getUsuarioAsignado(Libro* libro);
 };
 
 

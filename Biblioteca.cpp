@@ -81,9 +81,38 @@ void Biblioteca::cargarDisponibles(){
     std::cout << "Lista de libros disponibles" << std::endl;
     for (int i = 0; i < cantidadLibros; i++) {
         if (catalogoLibros[i]->getEstado() == true) {
-            cout<<catalogoLibros[i]->getTitulo()<<endl;
+            std::cout<<"El libro "<<catalogoLibros[i]->getTitulo()<<" está disponible"<<std::endl;
+        }else {
+            std::cout<<"El libro "<<catalogoLibros[i]->getTitulo()<<" no está disponible y lo tiene el usuario con DNI "<< catalogoLibros[i]->getDniUsuarioActual()<<std::endl;
         }
     }
+}
+
+void Biblioteca::cargarRegistroUsuarios() {
+
+    std::cout << "Registro de usuarios" << std::endl;
+
+    for (int i = 0; i < cantidadUsuarios; i++) {
+        std::cout<<"Usuario :"<<listaUsuarios[i]->getNombre() <<" "<<listaUsuarios[i]->getApellido()<<" | DNI:"<<std::endl;
+        std:: cout << "Lista de libros reservados actualmente"<< std::endl;
+        int cantReservados = listaUsuarios[i]->getCantidadReservados();
+        for (int j = 0; j < cantReservados; j++) {
+            if (listaUsuarios[i]->getCantidadReservados() > 0){
+            std::cout <<j++<<". "<< listaUsuarios[i]->atReservado(j).getTitulo() << std::endl;
+        }else {
+            std:: cout << "Actualmente no tiene ningún libros resevado"<< std::endl;
+        }
+        }
+        std:: cout << "Historial de libros Reservados"<< std::endl;
+        for (int k = 0; k < cantReservados; k++) {
+            if (listaUsuarios[i]->getCantidadHistorial() > 0){
+                std::cout <<k++<<". "<< listaUsuarios[i]->atHistorial(k).getTitulo() << std::endl;
+            }else {
+                std:: cout << "Historial vacio"<< std::endl;
+            }
+        }
+    }
+
 }
 
 
@@ -97,17 +126,25 @@ void Biblioteca:: asignarLibro(Libro* libro,Usuario* usuario){
 }
 
 
-void designarLibro(Libro* libro,Usuario* usuario) {
-    if (libro->getEstado() == false) {
-        libro->setDniUsuarioActual("");
-    }else {
-        std::cout<< "El libro " <<libro->getTitulo() << " no está asignado a ningun usuario"<< std::endl;
+
+    void Biblioteca::usuarioTieneLibro(std::string dni, std::string isbn) {
+        for (int i = 0; i < cantidadUsuarios; i++) {
+            if (listaUsuarios[i]->getDNI() == dni) {
+                Usuario* usuarioActual = listaUsuarios[i];
+                int cantReservados = usuarioActual->getCantidadReservados();
+                bool encontrado = false;
+
+                for (int j = 0; j < cantReservados; j++) {
+                    if (usuarioActual->atReservado(j).getISBN() == isbn) {
+                        encontrado = true;
+                    }
+                }
+
+                if (encontrado) {
+                    std::cout << "El libro con ISBN: " << isbn << " si lo tiene el usuario con DNI: " << dni << std::endl;
+                } else {
+                    std::cout << "El libro con ISBN: " << isbn << " no lo tiene el usuario con DNI: " << dni << std::endl;
+                }
+            }
+        }
     }
-}
-
-bool getUsuarioAsignado(Libro* libro) {
-
-}
-
-
-void historialUsuario();
