@@ -11,10 +11,10 @@
 class Biblioteca {
 
 private:
-    Libro* catalogoLibros[100];
+    ListaGenerica<Libro>* catalogoLibros;
     int cantidadLibros;
 
-    Usuario* listaUsuarios[100];
+    ListaGenerica<Usuario>* listaUsuarios;
     int cantidadUsuarios;
 
 public:
@@ -34,10 +34,6 @@ public:
 
     void usuarioTieneLibro(std::string dni, std::string isbn);
 
-    //   Ver el historial de libros de una persona
-    //    Ver si una persona tiene un libro o no
-    //    Sacar un libro (asignárselo a una persona)
-    //    Devolver un libro (desasignárselo a dicha persona)
     void getUsuarioAsignado(Libro* libro);
 };
 

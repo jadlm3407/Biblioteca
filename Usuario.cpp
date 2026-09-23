@@ -1,36 +1,16 @@
-//
-// Created by jadel on 16/09/2026.
-//
-
 #include "Usuario.h"
-#include "Libro.h"
-#include <iostream>
 
 Usuario::Usuario() {
-
+    nombre = "";
+    apellido = "";
+    dni = "";
 }
 
 Usuario::Usuario(std::string nombre, std::string apellido, std::string dni) {
     this->nombre = nombre;
     this->apellido = apellido;
     this->dni = dni;
-    cantidadReservados=0;
-    cantidadHistorial=0;
 }
-
-
-void Usuario::printReservas() {
-    for (int i = 0; i < cantidadReservados; i++) {
-        std::cout << i << ": " << Usuario::librosReservados[i].getTitulo() << std::endl; //Supongo que pondran getTitulo en Libro
-    }
-}
-
-void Usuario::printHistorial() {
-    for (int i = 0; i < cantidadHistorial; i++) {
-        std::cout<< i << ": " << Usuario::librosHistorial[i].getTitulo() << std::endl; //Supongo que pondran getTitulo en Libro
-    }
-}
-
 
 std::string Usuario::getNombre() {
     return nombre;
@@ -45,17 +25,29 @@ std::string Usuario::getDNI() {
 }
 
 int Usuario::getCantidadReservados() {
-    return cantidadReservados;
+    return librosReservados->length();
 }
 
 int Usuario::getCantidadHistorial() {
-    return cantidadHistorial;
+    return librosHistorial->length();
 }
 
 Libro Usuario::atReservado(int posicion) {
-    return Usuario::librosReservados[posicion];
+    return librosReservados->at(posicion);
 }
 
 Libro Usuario::atHistorial(int posicion) {
-    return Usuario::librosHistorial[posicion];
+    return librosHistorial->at(posicion);
+}
+
+void Usuario::agregarReservado(Libro libro) {
+    librosReservados->add(libro*);
+}
+
+Libro Usuario::quitarReservado(int posicion) {
+    return librosReservados->remove(posicion);
+}
+
+void Usuario::agregarHistorial(Libro libro) {
+    librosHistorial->add(libro*);
 }
