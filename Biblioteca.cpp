@@ -89,6 +89,11 @@ void Biblioteca::cargarDisponibles(){
     }
 }
 
+void Biblioteca:: imprimirUsuarios() {
+    std::cout << "Lista de <usuarios" << std::endl;
+    listaUsuarios->recorrer();
+}
+
 void Biblioteca::cargarRegistroUsuarios() {
 
     std::cout << "Registro de usuarios" << std::endl;

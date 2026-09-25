@@ -25,6 +25,10 @@ public:
     void cargarLibros();
 
     void cargarDisponibles();
+
+    void imprimirUsuarios();
+
+
     void cargarRegistroUsuarios();
 
 

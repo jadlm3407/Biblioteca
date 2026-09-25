@@ -27,9 +27,10 @@ public:
     Libro atReservado(int posicion);
     Libro atHistorial(int posicion);
 
-    void agregarReservado(Libro libro);
+    void agregarReservado(Libro* libro);
     Libro quitarReservado(int posicion);
-    void agregarHistorial(Libro libro);
+    void agregarHistorial(Libro* libro);
+    void printInfo();
 };
 
 #endif //BIBLIOTECA_USUARIO_H

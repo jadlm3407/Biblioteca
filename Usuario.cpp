@@ -1,5 +1,7 @@
 #include "Usuario.h"
 
+#include <iostream>
+
 Usuario::Usuario() {
     nombre = "";
     apellido = "";
@@ -40,14 +42,18 @@ Libro Usuario::atHistorial(int posicion) {
     return librosHistorial->at(posicion);
 }
 
-void Usuario::agregarReservado(Libro libro) {
-    librosReservados->add(libro*);
+void Usuario::agregarReservado(Libro* libro) {
+    librosReservados->add(libro);
 }
 
 Libro Usuario::quitarReservado(int posicion) {
     return librosReservados->remove(posicion);
 }
 
-void Usuario::agregarHistorial(Libro libro) {
-    librosHistorial->add(libro*);
+void Usuario::agregarHistorial(Libro* libro) {
+    librosHistorial->add(libro);
+}
+
+void Usuario:: printInfo() {
+    std::cout<< "Usuario: " << getNombre()<<" "<< getApellido() << "DNI: "<< getDNI()<< std::endl;
 }

@@ -52,9 +52,11 @@ T ListaGenerica<T>::at(int position) {
 }
 
 template<typename T>
-void ListaGenerica<T>::recorer() {
+void ListaGenerica<T>::recorrer() {
     for (int i = 0; i < count; i++) {
         std::cout << almacen[i] << std::endl;
+
+
     }
 }
 
